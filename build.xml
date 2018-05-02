@@ -79,7 +79,7 @@
 
  <target name="pdepend" description="Calculate software metrics using PHP_Depend">
   <!--<echo msg="Calculating software metrics..."/> -->
-  <exec logoutput="true" executable="${basedir}/build/tools/pdepend">
+  <exec executable="${basedir}/build/tools/pdepend">
    <arg value="--jdepend-xml=${basedir}/build/logs/jdepend.xml" />
    <arg value="--jdepend-chart=${basedir}/build/pdepend/dependencies.svg" />
    <arg value="--overview-pyramid=${basedir}/build/pdepend/overview-pyramid.svg" />
@@ -92,7 +92,7 @@
  <target name="php-cs-fixer"
          description="Find coding standard violations using PHP_CodeSniffer and print human readable output. Intended for usage on the command line before committing.">
   <!-- <echo msg="Finding coding standard violations..."/>  -->
-  <exec executable="${basedir}/build/tools/php-cs-fixer" logoutput="true">
+  <exec executable="${basedir}/build/tools/php-cs-fixer">
    <arg value="--standard=${basedir}/phpcs.xml" />
    <arg path="${basedir}/app" />
   </exec>
