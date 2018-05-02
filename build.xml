@@ -2,16 +2,13 @@
 
 <project name="php5" default="build" basedir=".">
  <target name="build"
-   depends="prepare,lint,phploc,pdepend,php-cs-fixer,phpdox"/>
+   depends="prepare,lint,phploc,php-cs-fixer,phpdox"/>
 
  <target name="build-parallel"
    depends="prepare,lint,tools-parallel"/>
 
  <target name="tools-parallel" description="Run tools in parallel">
   <parallel threadCount="2">
-   <sequential>
-    <antcall target="pdepend"/>
-   </sequential>
    <antcall target="phpcs-cs-fixer"/>
    <antcall target="phploc"/>
    <antcall target="phpdox"/>
