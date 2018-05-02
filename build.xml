@@ -71,7 +71,7 @@
  </target>
 
  <!-- <target name="phploc" description="Measure project size using PHPLOC">
- <!-- <echo msg="Measuring project size..."/>  
+  <echo msg="Measuring project size..."/>  
   <exec executable="${basedir}/vendor/bin/phploc">
    <arg value="--log-csv" />
    <arg value="${basedir}/build/logs/phploc.csv" />
