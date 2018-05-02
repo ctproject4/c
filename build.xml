@@ -77,16 +77,6 @@
   </exec>
  </target> 
 
- <target name="pdepend" description="Calculate software metrics using PHP_Depend">
-  <!--<echo msg="Calculating software metrics..."/> -->
-  <exec executable="${basedir}/build/tools/pdepend">
-   <arg value="--jdepend-xml=${basedir}/build/logs/jdepend.xml" />
-   <arg value="--jdepend-chart=${basedir}/build/pdepend/dependencies.svg" />
-   <arg value="--overview-pyramid=${basedir}/build/pdepend/overview-pyramid.svg" />
-   <arg path="${basedir}/app" />
-  </exec>
- </target>
-
  
 
  <target name="php-cs-fixer"
@@ -105,6 +95,10 @@
   <exec executable="${basedir}/build/tools/phpdox"/>
  </target>
 
+ <target name="phpunit" description="Run unit tests with PHPUnit">
+<!--  <echo msg="Running PHPUnit tests..."/>  -->
+  <exec executable="${basedir}/build/tools/phpunit" logoutput="true" checkreturn="1"/>
+ </target>
 
  
  <target name="install" description="Prepare files and directories for Jenkins">
