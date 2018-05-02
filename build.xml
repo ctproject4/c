@@ -44,27 +44,27 @@
   <apply executable="php" taskname="lint">
    <arg value="-l" />
 
-   <fileset dir="${basedir}/app/console">
+   <fileset dir="${basedir}/app/Console">
     <include name="**/*.php" />
    </fileset>
 
-   <fileset dir="${basedir}/app/facades">
+   <fileset dir="${basedir}/app/Facades">
     <include name="**/*.php" />
    </fileset>
 
-   <fileset dir="${basedir}/app/models">
+   <fileset dir="${basedir}/app/Models">
     <include name="**/*.php" />
    </fileset>
 
-   <fileset dir="${basedir}/app/http">
+   <fileset dir="${basedir}/app/Http">
     <include name="**/*.php" />
    </fileset>
    
-   <fileset dir="${basedir}/app/navigation">
+   <fileset dir="${basedir}/app/Navigation">
     <include name="**/*.php" />
    </fileset>
    
-   <fileset dir="${basedir}/app/providers">
+   <fileset dir="${basedir}/app/Providers">
     <include name="**/*.php" />
    </fileset>
   </apply>
