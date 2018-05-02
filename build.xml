@@ -44,11 +44,11 @@
   <apply executable="php" taskname="lint">
    <arg value="-l" />
 
-   <fileset dir="${basedir}/app/controllers">
+   <fileset dir="${basedir}/app/console">
     <include name="**/*.php" />
    </fileset>
 
-   <fileset dir="${basedir}/app/database/migrations">
+   <fileset dir="${basedir}/app/facades">
     <include name="**/*.php" />
    </fileset>
 
@@ -56,7 +56,15 @@
     <include name="**/*.php" />
    </fileset>
 
-   <fileset dir="${basedir}/app/tests">
+   <fileset dir="${basedir}/app/http">
+    <include name="**/*.php" />
+   </fileset>
+   
+   <fileset dir="${basedir}/app/navigation">
+    <include name="**/*.php" />
+   </fileset>
+   
+   <fileset dir="${basedir}/app/providers">
     <include name="**/*.php" />
    </fileset>
   </apply>
