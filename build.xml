@@ -70,18 +70,18 @@
   </apply>
  </target>
 
- <!-- <target name="phploc" description="Measure project size using PHPLOC">
-  <echo msg="Measuring project size..."/>  
-  <exec executable="${basedir}/vendor/bin/phploc">
+  <target name="phploc" description="Measure project size using PHPLOC">
+ <!-- <echo msg="Measuring project size..."/> --> 
+  <exec executable="${basedir}/build/tools/phploc">
    <arg value="--log-csv" />
    <arg value="${basedir}/build/logs/phploc.csv" />
    <arg path="${basedir}/app" />
   </exec>
- </target> -->
+ </target> 
 
  <target name="pdepend" description="Calculate software metrics using PHP_Depend">
   <!--<echo msg="Calculating software metrics..."/> -->
-  <exec logoutput="true" executable="${basedir}/build/pdepend">
+  <exec logoutput="true" executable="${basedir}/build/tools/pdepend">
    <arg value="--jdepend-xml=${basedir}/build/logs/jdepend.xml" />
    <arg value="--jdepend-chart=${basedir}/build/pdepend/dependencies.svg" />
    <arg value="--overview-pyramid=${basedir}/build/pdepend/overview-pyramid.svg" />
@@ -107,18 +107,18 @@
    <arg value="--reportfile" />
    <arg value="${basedir}/build/logs/pmd.xml" />
   </exec>
- </target>
+ </target>-->
 
- <target name="phpcs"
+ <target name="php-cs-fixer"
          description="Find coding standard violations using PHP_CodeSniffer and print human readable output. Intended for usage on the command line before committing.">
-  <!-- <echo msg="Finding coding standard violations..."/>  
-  <exec executable="${basedir}/vendor/bin/phpcs" logoutput="true">
+  <!-- <echo msg="Finding coding standard violations..."/>  -->
+  <exec executable="${basedir}/build/tools/php-cs-fixer" logoutput="true">
    <arg value="--standard=${basedir}/phpcs.xml" />
    <arg path="${basedir}/app" />
   </exec>
  </target>
 
- <target name="phpcs-ci" description="Find coding standard violations using PHP_CodeSniffer creating a log file for the continuous integration server">
+ <!--<target name="phpcs-ci" description="Find coding standard violations using PHP_CodeSniffer creating a log file for the continuous integration server">
   <exec executable="${basedir}/vendor/bin/phpcs" output="/dev/null">
    <arg value="--report=checkstyle" />
    <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
@@ -138,7 +138,7 @@
 
  <target name="phpdox" description="Generate API documentation using phpDox">
   <!-- <echo msg="Generating API documentation..."/> -->
-  <exec executable="${basedir}/build/phpdox"/>
+  <exec executable="${basedir}/build/tools/phpdox"/>
  </target>
 
 <!-- <target name="phpunit" description="Run unit tests with PHPUnit">
