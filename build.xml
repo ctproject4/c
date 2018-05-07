@@ -72,7 +72,7 @@
 
   <target name="phploc" description="Measure project size using PHPLOC">
  <!-- <echo msg="Measuring project size..."/> --> 
-  <exec executable="${basedir}/build/phploc">
+  <exec executable="${basedir}/build/tools/phploc">
    <arg value="--log-csv" />
    <arg value="${basedir}/build/logs/phploc.csv" />
    <arg path="${basedir}/app" />
@@ -84,7 +84,7 @@
  <target name="php-cs-fixer"
          description="Find coding standard violations using PHP_CodeSniffer and print human readable output. Intended for usage on the command line before committing.">
   <!-- <echo msg="Finding coding standard violations..."/>  -->
-  <exec executable="${basedir}/build/php-cs-fixer">
+  <exec executable="${basedir}/build/tools/php-cs-fixer">
    <arg value="--standard=${basedir}/phpcs.xml" />
    <arg path="${basedir}/app" />
   </exec>
@@ -94,12 +94,12 @@
 
  <target name="phpdox" description="Generate API documentation using phpDox">
   <!-- <echo msg="Generating API documentation..."/> -->
-  <exec executable="${basedir}/build/phpdox"/>
+  <exec executable="${basedir}/build/tools/phpdox"/>
  </target>
 
  <target name="phpunit" description="Run unit tests with PHPUnit">
 <!--  <echo msg="Running PHPUnit tests..."/>  -->
-  <exec executable="${basedir}/build/phpunit" logoutput="true" checkreturn="1"/>
+  <exec executable="${basedir}/build/tools/phpunit" logoutput="true" checkreturn="1"/>
  </target>
 
  
